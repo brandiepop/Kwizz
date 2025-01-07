@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kwizz</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body id="main"> 
+        <div id="home" style="display: block;">  <!--Page for the Home screen-->
+            <h1 style="font-size: 50px">Kwizz</h1>
+            <h2></h2>
+            <button id="quizzes">Quizzes</button>
+            <button id="alarmButton">Alarms</button>
+            <button id="settingsButton">Settings</button>
+        </div> 
+        <div id="quiz" style="display: none;"> <!--Page for the quiz-->
+            <h1>Quiz title</h1>
+            <div id="question"></div>
+            <div id="answers"></div>
+            <div id="correct"></div>
+        </div>
+        <div id="end" style= "display: none;">
+        </div>
+        <div id="settingsPage" style="display: none;">
+            <h1>Settings</h1>
+        </div>
+        <div id="alarmPage" style="display: none;">
+            <h1>Alarms</h1>
+            <audio controls id="alarm1">
+                <source src="Alarm1.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <script src="Script.js"></script>
+    </body>
+</html>
