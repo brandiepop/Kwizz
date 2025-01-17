@@ -1,0 +1,23 @@
+#answers {
+    font-size: 20px;
+    padding: 20px 20px;
+}
+#question {
+    font-size: 56px;
+}
+#home { /* makes home page start as visible */
+    display: block;
+    position: relative;
+    }
+#main { /* centres everything by default */
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 100px;
+    text-align: center
+}
+#title { /* makes title true centred horizontally */
+    font-size: 150px;
+}

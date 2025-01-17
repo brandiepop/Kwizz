@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kwizz</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body id="main"> 
+        <div id="home" style="display: block;">  <!--Page for the Home screen-->
+            <h1 id="title">Kwizz</h1>
+            <h2></h2>
+            <button id="quizzes">Quizzes</button>
+            <button id="alarmButton">Alarms</button>
+            <button id="settingsButton">Settings</button>
+        </div> 
+        <div id="quiz" style="display: none;"> <!--Page for the quiz-->
+            <h1>Quiz title</h1>
+            <div id="question"></div>
+            <div id="answers"></div>
+            <div id="correct"></div>
+        </div>
+        <div id="end" style= "display: none;">
+        </div>
+        <div id="settingsPage" style="display: none;"> <!--Page for the setting-->
+            <h1>Settings</h1>
+        </div>
+        <div id="alarmPage" style="display: none;"> <!--Page for the alarms-->
+            <h1>Alarms</h1>
+            <button class="standardAlarmButton" onclick=(alarmAlert1)>alarm1</button>
+            <div>
+                <button> Preview Alarm 1
+                    <audio controls id="alarm1" loop>
+                        <source src="Alarms/Alarm1.mp3" type="audio/mpeg"> 
+                    </audio>
+                </button>
+                <button> Preview Alarm 2
+                    <audio controls id="alarm2" loop>
+                        <source src="Alarms/Alarm2.mp3" type="audio/mpeg"> 
+                    </audio>
+                </button>
+                <button> Preview Alarm 3
+                    <audio controls id="alarm3" loop>
+                        <source src="Alarms/Alarm3.mp3" type="audio/mpeg"> 
+                    </audio>
+                </button>
+                <button> Preview Alarm 4
+                    <audio controls id="alarm4" loop>
+                        <source src="Alarms/Alarm4.mp3" type="audio/mpeg">
+                    </audio>
+                </button>
+                <button> Preview Alarm 5
+                    <audio controls id="alarm5" loop>
+                        <source src="Alarms/Alarm5.mp3" type="audio/mpeg">
+                    </audio>
+                </button>
+            </div>
+            <button onclick=(endAlarm)>Stop Alarm</button>
+        </div>
+        <script src="Script.js"></script>
+    </body>
+</html>
