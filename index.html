@@ -4,31 +4,87 @@
         <title>Kwizz</title>
         <link rel="stylesheet" href="Style.css">
     </head>
-    <body id="main"> 
-        <div id="home" style="display: block;">  <!--Page for the Home screen-->
-            <h1 style="font-size: 50px">Kwizz</h1>
-            <h2></h2>
-            <button id="quizzes">Quizzes</button>
-            <button id="alarmButton">Alarms</button>
-            <button id="settingsButton">Settings</button>
-        </div> 
-        <div id="quiz" style="display: none;"> <!--Page for the quiz-->
-            <h1>Quiz title</h1>
-            <div id="question"></div>
-            <div id="answers"></div>
-            <div id="correct"></div>
+    <body> 
+        <div id="main">
+            <div id="home" style="display: block;">  <!--Page for the Home screen-->
+                <h1 id="title">Kwizz</h1>
+                <h2></h2>
+                <button class="button" id="quizzesButton">Quizzes</button>
+                <button class="button" id="alarmButton">Alarms</button>
+                <button class="button" id="settingsButton">Settings</button>
+            </div> 
+            <div id="quizPage" style="display: none;">
+                <button id="physicsButton" class="button">Physics</button>
+                <button id="mathsButton" class="button">Maths</button>
+            </div>
+            <div id="physicsQuizPage" style="display: none;"> <!--Page for the quiz-->
+                <h1>Physics</h1>
+                <div id="physicsQuestion"></div>
+                <div id="physicsAnswers"></div>
+                <div id="physicsCorrect"></div>
+            </div>
+            <div id="mathsQuizPage" style="display: none;"> <!--Page for the quiz-->
+                <h1>Maths</h1>
+                <div id="mathsQuestion"></div>
+                <div id="mathsAnswers"></div>
+                <div id="mathsCorrect"></div>
+            </div>
+            <div id="end" style= "display: none;">
+            </div>
+            <div id="settingsPage" style="display: none;"> <!--Page for the setting-->
+                <h1>Settings</h1>
+            </div>
+            <div id="alarmPage" style="display: none;"> <!--Page for the alarms-->
+                <h1>Alarms</h1>
+                <div>
+                    <label for="alarmTime">Enter the Length you want your alarm to be in minutes</label><br>
+                    <input min="1" type="number" id="alarmTime" name="alarmTime" placeholder="120"></input>
+                    <div><button class="button" class="standardAlarmButton" onclick="alarmAlert1()">alarm1</button></div>
+                    <div>
+                    <button class="button" style="display: none;"> Preview Alarm 1
+                        <audio controls id="alarm1" loop>
+                            <source src="Alarms/Alarm1.mp3" type="audio/mpeg"> 
+                        </audio>
+                    </button>
+                    <button class="button" id="twoClickButton" onclick="prevAlarm1">Preview Alarm 1</button>
+                    </div>
+                    <div><button class="button" class="standardAlarmButton" onclick="alarmAlert2()">alarm2</button></div>
+                    <div>
+                    <button class="button"> Preview Alarm 2
+                        <audio controls id="alarm2" loop>
+                            <source src="Alarms/Alarm2.mp3" type="audio/mpeg"> 
+                        </audio>
+                    </button>
+                    </div>
+                    <div><button class="button" class="standardAlarmButton" onclick="alarmAlert3()">alarm3</button></div>
+                    <div>
+                    <button class="button"> Preview Alarm 3
+                        <audio controls id="alarm3" loop>
+                            <source src="Alarms/Alarm3.mp3" type="audio/mpeg"> 
+                        </audio>
+                    </button>
+                    </div>
+                    <div><button class="button" class="standardAlarmButton" onclick="alarmAlert4()">Alarm4</button></div>
+                    <div>
+                    <button class="button"> Preview Alarm 4
+                        <audio controls id="alarm4" loop>
+                            <source src="Alarms/Alarm4.mp3" type="audio/mpeg">
+                        </audio>
+                    </button>
+                    </div>
+                    <div><button class="button" class="standardAlarmButton" onclick="alarmAlert5()">alarm5</button></div>
+                    <div>
+                    <button class="button"> Preview Alarm 5
+                        <audio controls id="alarm5" loop>
+                            <source src="Alarms/Alarm5.mp3" type="audio/mpeg">
+                        </audio>
+                    </button>
+                    </div>
+                </div>
+                <button class="button" onclick="endAlarms()">Stop Alarm</button>
+            </div>
         </div>
-        <div id="end" style= "display: none;">
-        </div>
-        <div id="settingsPage" style="display: none;">
-            <h1>Settings</h1>
-        </div>
-        <div id="alarmPage" style="display: none;">
-            <h1>Alarms</h1>
-            <audio controls id="alarm1">
-                <source src="Alarm1.mp3" type="audio/mpeg">
-            </audio>
-        </div>
+        <button id="backButton" class="button" onclick="goHome()">Go Back</button>
         <script src="Script.js"></script>
     </body>
 </html>
