@@ -1,4 +1,9 @@
-
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f3f0da;
+    color: #5D4157;
+}
 #answers {
     font-size: 20px;
     padding: 20px 20px;
@@ -6,16 +11,56 @@
 #question {
     font-size: 56px;
 }
-#home { /* makes home start as visible */
+#home { /* makes home page start as visible */
     display: block;
     position: relative;
-    height: 100px;
     }
-#main { /* This centers everything by default */
+#main { /* centres everything by default */
     position: absolute;
     top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 800px;
     height: 100px;
+    text-align: center;
+}
+#title { /* makes title true centred horizontally */
+    font-size: 150px;
+}
+#backButton { /* centres everything by default */
+    display: none;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.button {
+    background-color: #a7c7b8;
+    color: #5D4157;
+}
+#physicsAnswers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+}
+#mathsAnswers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
 }
