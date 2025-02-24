@@ -43,42 +43,46 @@
                     <div>
                     <button class="button" style="display: none;"> Preview Alarm 1
                         <audio controls id="alarm1" loop>
-                            <source src="Project/Alarms/Alarm1.mp3" type="audio/mpeg"> 
+                            <source src="Alarms/Alarm1.mp3" type="audio/mpeg"> 
                         </audio>
                     </button>
-                    <button class="button" id="twoClickButton" onclick="prevAlarm1">Preview Alarm 1</button>
+                    <button class="button" id="prevAlarm1" onclick="prevAlarm1()">Preview Alarm 1</button>
                     </div>
                     <div><button class="button" class="standardAlarmButton" onclick="alarmAlert2()">alarm2</button></div>
                     <div>
-                    <button class="button"> Preview Alarm 2
+                    <button class="button" style="display: none;"> Preview Alarm 2
                         <audio controls id="alarm2" loop>
-                            <source src="Project/Alarms/Alarm2.mp3" type="audio/mpeg"> 
+                            <source src="Alarms/Alarm2.mp3" type="audio/mpeg"> 
                         </audio>
                     </button>
+                    <button class="button" id="prevAlarm2" onclick="prevAlarm2()">Preview Alarm 2</button>
                     </div>
                     <div><button class="button" class="standardAlarmButton" onclick="alarmAlert3()">alarm3</button></div>
                     <div>
-                    <button class="button"> Preview Alarm 3
+                    <button class="button" style="display: none;"> Preview Alarm 3
                         <audio controls id="alarm3" loop>
-                            <source src="Project/Alarms/Alarm3.mp3" type="audio/mpeg"> 
+                            <source src="Alarms/Alarm3.mp3" type="audio/mpeg"> 
                         </audio>
                     </button>
+                    <button class="button" id="prevAlarm3" onclick="prevAlarm3()">Preview Alarm 3</button>
                     </div>
                     <div><button class="button" class="standardAlarmButton" onclick="alarmAlert4()">Alarm4</button></div>
                     <div>
-                    <button class="button"> Preview Alarm 4
+                    <button class="button" style="display: none;"> Preview Alarm 4
                         <audio controls id="alarm4" loop>
-                            <source src="Project/Alarms/Alarm4.mp3" type="audio/mpeg">
+                            <source src="Alarms/Alarm4.mp3" type="audio/mpeg">
                         </audio>
                     </button>
+                    <button class="button" id="prevAlarm4" onclick="prevAlarm4()">Preview Alarm 4</button>
                     </div>
                     <div><button class="button" class="standardAlarmButton" onclick="alarmAlert5()">alarm5</button></div>
                     <div>
-                    <button class="button"> Preview Alarm 5
+                    <button class="button" style="display: none;"> Preview Alarm 5
                         <audio controls id="alarm5" loop>
-                            <source src="Project/Alarms/Alarm5.mp3" type="audio/mpeg">
+                            <source src="Alarms/Alarm5.mp3" type="audio/mpeg">
                         </audio>
                     </button>
+                    <button class="button" id="prevAlarm5" onclick="prevAlarm5()">Preview Alarm 5</button>
                     </div>
                 </div>
                 <button class="button" onclick="endAlarms()">Stop Alarm</button>
