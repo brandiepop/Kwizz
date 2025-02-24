@@ -38,7 +38,6 @@ playAlarm2 = false;
 playAlarm3 = false;
 playAlarm4 = false;
 playAlarm5 = false;
-isFirstClick = true;
 
 //Links all constants to their Id
 const physicsQuestionElement = document.getElementById("physicsQuestion");
@@ -96,19 +95,6 @@ document.getElementById("mathsButton").onclick = function openMathsQuizPage() {
     resetQuiz();
     mathsQuizSystem();
 };
-//Function to create 2 click buttons
-document.getElementById("twoClickButton").onclick = function twoClickButton() {
-    if (isFirstClick) {
-        firstClick = true
-        secondClick = false
-    } 
-    else {
-        SecondClick = true
-        firstClick = false
-    };
-    isFirstClick = !isFirstClick
-};
-
 
 
 //Displays the home page and hides all other pages
@@ -280,11 +266,134 @@ function alarmOver5() {
 
 
 
+//Function to create 2 click buttons
+function twoClickButton(isFirstClick) {
+    let firstClick = false; 
+    let secondClick = false;
+
+    if (isFirstClick === true) {
+        firstClick = true
+        secondClick = false
+        isFirstClick = false
+        console.log("input1")
+    } 
+    else if (isFirstClick === false) {
+        secondClick = true
+        firstClick = false
+        isFirstClick = true
+        console.log("input2")
+    };
+    return {isFirstClick, firstClick, secondClick}
+};
+
+let isFirstClick1 = true;
+let isFirstClick2 = true;
+let isFirstClick3 = true;
+let isFirstClick4 = true;
+let isFirstClick5 = true;
+
 function prevAlarm1() {
-    isFirstClick = true
+    let update = twoClickButton(isFirstClick1);
+    ({isFirstClick1, firstClick, secondClick } = update);
+    isFirstClick1 = update.isFirstClick;
     if (firstClick === true) {
-        playAlarm1()
-    }
+        alarm1.play()
+            console.log("alarm 1 playing");
+            document.getElementById("prevAlarm1").style.backgroundColor = "lime";
+    };
+    if (secondClick === true) {
+        alarm1.pause()
+            alarm1.load();
+            console.log("alarm 1 stopping");
+            document.getElementById("prevAlarm1").style.backgroundColor = "red";
+    };
+    setTimeout(() => {
+        document.getElementById("prevAlarm1").style.backgroundColor = "#a7c7b8";
+    }, 2000)
+};
+function prevAlarm2() {
+    let update = twoClickButton(isFirstClick2);
+    ({isFirstClick2, firstClick, secondClick } = update);
+    isFirstClick2 = update.isFirstClick;
+    if (firstClick === true) {
+        alarm2.play().then(() => {
+            console.log("alarm 2 playing");
+            document.getElementById("prevAlarm2").style.backgroundColor = "lime";
+        }).catch(error => console.error("Error playing audio", error))  
+    };
+    if (secondClick === true) {
+        alarm2.pause().then(() => {
+            alarm2.load();
+            console.log("alarm 2 stopping");
+            document.getElementById("prevAlarm2").style.backgroundColor = "red";
+        }).catch(error => console.error("Error stopping audio", error))
+    };
+    setTimeout(() => {
+        document.getElementById("prevAlarm2").style.backgroundColor = "#a7c7b8";
+    }, 2000)
+};
+function prevAlarm3() {
+    let update = twoClickButton(isFirstClick3);
+    ({isFirstClick3, firstClick, secondClick } = update);
+    isFirstClick3 = update.isFirstClick;
+    if (firstClick === true) {
+        alarm3.play().then(() => {
+            console.log("alarm 3 playing")
+            document.getElementById("prevAlarm3").style.backgroundColor = "lime";
+        }).catch(error => console.error("Error playing audio", error))
+    };
+    if (secondClick === true) {
+        alarm3.pause().then(() => {
+            alarm3.load();
+            console.log("alarm 3 stopping")
+            document.getElementById("prevAlarm3").style.backgroundColor = "red";
+        }).catch(error => console.error("Error stopping audio", error))
+    };
+    setTimeout(() => {
+        document.getElementById("prevAlarm3").style.backgroundColor = "#a7c7b8";
+    }, 2000)
+};
+function prevAlarm4() {
+    let update = twoClickButton(isFirstClick4);
+    ({isFirstClick4, firstClick, secondClick } = update);
+    isFirstClick4 = update.isFirstClick;
+    if (firstClick === true) {
+        alarm4.play().then(() => {
+            console.log("alarm 4 playing")
+            document.getElementById("prevAlarm4").style.backgroundColor = "lime";
+        }).catch(error => console.error("Error playing audio", error))
+    };
+    if (secondClick === true) {
+        alarm4.pause().then(() => {
+            alarm4.load();
+            console.log("alarm 4 stopping")
+            document.getElementById("prevAlarm4").style.backgroundColor = "red";
+        }).catch(error => console.error("Error stopping audio", error))
+    };
+    setTimeout(() => {
+        document.getElementById("prevAlarm4").style.backgroundColor = "#a7c7b8";
+    }, 2000)
+};
+function prevAlarm5() {
+    let update = twoClickButton(isFirstClick5);
+    ({isFirstClick5, firstClick, secondClick } = update);
+    isFirstClick5 = update.isFirstClick;
+    if (firstClick === true) {
+        alarm5.play().then(() => {
+            console.log("alarm 5 playing")
+            document.getElementById("prevAlarm5").style.backgroundColor = "lime";
+        }).catch(error => console.error("Error playing audio", error))   
+    };
+    if (secondClick === true) {
+        alarm5.pause().then(() => {
+            alarm5.load();
+            console.log("alarm 5 stopping")
+            document.getElementById("prevAlarm5").style.backgroundColor = "red";
+        }).catch(error => console.error("Error stopping audio", error))
+    };
+    setTimeout(() => {
+        document.getElementById("prevAlarm5").style.backgroundColor = "#a7c7b8";
+    }, 2000)
 };
 
 
@@ -326,5 +435,6 @@ function endAlarms() {
     alarm3.load();
     alarm4.load();
     alarm5.load();
+    isFirstClick1 = isFirstClick2 = isFirstClick3 = isFirstClick4 = isFirstClick5 = true;
     playAlarm1 = playAlarm2 = playAlarm3 = playAlarm4 = playAlarm5 = false;
 };
